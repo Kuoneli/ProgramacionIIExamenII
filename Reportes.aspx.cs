@@ -14,15 +14,17 @@ namespace ProgramacionIIExamenII
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarGrid();
+            EncuestasTotales();
+            //EncuestasConCarro();
+
         }
 
-        protected void LlenarGrid()
+        protected void EncuestasTotales()
         {
             string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select * from Encuestas"))
+                using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -31,12 +33,56 @@ namespace ProgramacionIIExamenII
                         using (DataTable dt = new DataTable())
                         {
                             sda.Fill(dt);
-                            TReportes.DataSource = dt;
-                            TReportes.DataBind(); // refrescar la tabla
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind(); // refrescar la tabla
                         }
                     }
                 }
             }
         }
+
+        //protected void EncuestasConCarro()
+        //{
+        //    string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
+        //    using (SqlConnection con = new SqlConnection(constr))
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas where CarroPropio = 'Si'"))
+        //        {
+        //            using (SqlDataAdapter sda = new SqlDataAdapter())
+        //            {
+        //                cmd.Connection = con;
+        //                sda.SelectCommand = cmd;
+        //                using (DataTable dt = new DataTable())
+        //                {
+        //                    sda.Fill(dt);
+        //                    GridView1.DataSource = dt;
+        //                    GridView1.DataBind(); // refrescar la tabla
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        //protected void EncuestasSinCarro()
+        //{
+        //    string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
+        //    using (SqlConnection con = new SqlConnection(constr))
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas where CarroPropio = 'No'"))
+        //        {
+        //            using (SqlDataAdapter sda = new SqlDataAdapter())
+        //            {
+        //                cmd.Connection = con;
+        //                sda.SelectCommand = cmd;
+        //                using (DataTable dt = new DataTable())
+        //                {
+        //                    sda.Fill(dt);
+        //                    GridView1.DataSource = dt;
+        //                    GridView1.DataBind(); // refrescar la tabla
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

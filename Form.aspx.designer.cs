@@ -69,6 +69,15 @@ namespace ProgramacionIIExamenII
         protected global::System.Web.UI.WebControls.Label AlertaEdad;
 
         /// <summary>
+        /// contenido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenido;
+
+        /// <summary>
         /// LabelNombre control.
         /// </summary>
         /// <remarks>
@@ -87,13 +96,31 @@ namespace ProgramacionIIExamenII
         protected global::System.Web.UI.WebControls.TextBox TextoNombre;
 
         /// <summary>
+        /// LabelApellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelApellido;
+
+        /// <summary>
         /// TextoApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextoApellido;
+        protected global::System.Web.UI.WebControls.TextBox TextoApellido;
+
+        /// <summary>
+        /// LabelNacimiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelNacimiento;
 
         /// <summary>
         /// TextoNacimiento control.
@@ -105,13 +132,13 @@ namespace ProgramacionIIExamenII
         protected global::System.Web.UI.WebControls.TextBox TextoNacimiento;
 
         /// <summary>
-        /// Label6 control.
+        /// LabelCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label LabelCorreo;
 
         /// <summary>
         /// TextoCorreo control.
@@ -123,48 +150,30 @@ namespace ProgramacionIIExamenII
         protected global::System.Web.UI.WebControls.TextBox TextoCorreo;
 
         /// <summary>
-        /// Label7 control.
+        /// LabelCarro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label LabelCarro;
 
         /// <summary>
-        /// TextoCarroPropio control.
+        /// TextoCarro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextoCarroPropio;
+        protected global::System.Web.UI.WebControls.DropDownList TextoCarro;
 
         /// <summary>
-        /// Label8 control.
+        /// IngresarDatos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
-
-        /// <summary>
-        /// DropDownList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button IngresarDatos;
     }
 }

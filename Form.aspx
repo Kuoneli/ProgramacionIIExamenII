@@ -8,7 +8,7 @@
 </head>
 <body style="background-color: aliceblue">
     <form id="form1" runat="server">
-        <div>
+        <div hidden="hidden">
             <asp:Label ID="NFormulario" runat="server" Text="Numero De Formulario" Font-Names="Calibri Light"></asp:Label>
         </div>
           <br />
@@ -19,34 +19,35 @@
                 <br />
             <asp:Button ID="VerificarEdad" runat="server" Text="Verificar edad" BackColor="#9999FF" BorderColor="White" ForeColor="White" OnClick="VerificarEdad_Click" />
                 <br />
-            <asp:Label ID="AlertaEdad" runat="server" Font-Names="Calibri Light" Visible="False"></asp:Label>
+            <asp:Label ID="AlertaEdad" runat="server" Font-Names="Calibri Light" Visible="False">Vacio</asp:Label>
         </div>
             <br />
-        <div id="contenido" style="background-color: #">
-            <asp:Label ID="LabelNombre" runat="server" Text="Ingrese su Nombre" Font-Names="Calibri Light"></asp:Label>
+        <div id="contenido" visible="true" runat="server" >
+            <asp:Label ID="LabelNombre" runat="server" Text="Ingrese su Nombre" Font-Names="Calibri Light" Visible="False"></asp:Label>
              <br />
-                <asp:TextBox ID="TextoNombre" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light"></asp:TextBox>
+                <asp:TextBox ID="TextoNombre" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light" Visible="False"></asp:TextBox>
                  <br />
-            <asp:Label ID="TextoApellido" runat="server" Text="Ingrese su Apellido" Font-Names="Calibri Light"></asp:Label>
+            <asp:Label ID="LabelApellido" runat="server" Text="Ingrese su Apellido" Font-Names="Calibri Light" Visible="False"></asp:Label>
                  <br />
-            <asp:TextBox ID="TextoNacimiento" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light"></asp:TextBox>
+            <asp:TextBox ID="TextoApellido" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light" Visible="False"></asp:TextBox>
                  <br />
-            <asp:Label ID="Label6" runat="server" Text="Ingrse su Fecha de Nacimiento (En formato AAAA-MM-DD)" Font-Names="Calibri Light"></asp:Label>
+            <asp:Label ID="LabelNacimiento" runat="server" Text="Ingrse su Fecha de Nacimiento (En formato AAAA-MM-DD)" Font-Names="Calibri Light" Visible="False"></asp:Label>
                  <br />
-            <asp:TextBox ID="TextoCorreo" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light"></asp:TextBox>
+            <asp:TextBox ID="TextoNacimiento" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light" Visible="False"></asp:TextBox>
                  <br />
-            <asp:Label ID="Label7" runat="server" Text="Ingrese su Correo Electronico" Font-Names="Calibri Light"></asp:Label>
+            <asp:Label ID="LabelCorreo" runat="server" Text="Ingrese su Correo Electronico" Font-Names="Calibri Light" Visible="False"></asp:Label>
                  <br />
-            <asp:TextBox ID="TextoCarroPropio" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light"></asp:TextBox>
+            <asp:TextBox ID="TextoCorreo" runat="server" OnTextChanged="TextBox1_TextChanged" class="mandatory" Font-Names="Calibri Light" Visible="False"></asp:TextBox>
                  <br />
-            <asp:Label ID="Label8" runat="server" Text="Cuenta con carro propio?" Font-Names="Calibri Light"></asp:Label>
+            <asp:Label ID="LabelCarro" runat="server" Text="Cuenta con carro propio?" Font-Names="Calibri Light" Visible="False"></asp:Label>
                  <br />
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="TextoCarro" runat="server" Visible="False">
                 <asp:ListItem>Si</asp:ListItem>
                 <asp:ListItem>No</asp:ListItem>
             </asp:DropDownList>
                 <br />
-            <asp:Button ID="Button1" runat="server" Text="Verificar edad" BackColor="#9999FF" BorderColor="White" ForeColor="White" OnClick="VerificarEdad_Click" />
+            <asp:Button ID="IngresarDatos" runat="server" Text="Ingresar Datos" OnClick="IngresarDatos_Click" Visible="False" />
+                <br />
 
         </div>
     </form>
