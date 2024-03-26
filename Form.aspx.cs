@@ -93,28 +93,18 @@ namespace ProgramacionIIExamenII
            
         }
 
-        protected void EncuestasTotales()
+        protected void NumeroFormulario()
         {
-            string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas"))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
-                    {
-                        cmd.Connection = con;
-                        sda.SelectCommand = cmd;
-                        using (DataTable dt = new DataTable())
-                        {
-                            sda.Fill(dt);
-                            GridView1.DataSource = dt;
-                            GridView1.DataBind(); // refrescar la tabla
-                        }
-                    }
-                }
-            }
+            SqlConnection con = new SqlConnection(@"data source=localhost;initial catalog = Encuesta;Integrated Security=True");
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Encuestas", con);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            GridView1.DataSource = rdr;
+            GridView1.DataBind();
+            con.Close();
         }
 
-    
+
     }
 }

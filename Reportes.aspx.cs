@@ -54,28 +54,13 @@ namespace ProgramacionIIExamenII
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from Encuestas where CarroPropio = 'No'", con);
             SqlDataReader rdr = cmd.ExecuteReader();
-            GridView3.DataSource = rdr;
-            GridView3.DataBind();
+            GridView2.DataSource = rdr;
+            GridView2.DataBind();
             con.Close();
 
         }
 
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TotalEncuestas_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
-
-        protected void GridView3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
 
     }
 }
