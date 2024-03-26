@@ -77,7 +77,7 @@ namespace ProgramacionIIExamenII
             String s = System.Configuration.ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
             SqlConnection conexion = new SqlConnection(s);
             conexion.Open();
-            SqlCommand comando = new SqlCommand(" INSERT INTO Encuestas VALUES('" + "' , '" + TextoNombre.Text + "', '" + TextoApellido.Text + "', '" + TextoNacimiento.Text + "','" + TextoEdad.Text + "','" + TextoCorreo.Text + "','" + TextoCarro.Text + "')", conexion);
+            SqlCommand comando = new SqlCommand(" INSERT INTO Encuestas VALUES('" + TextoNombre.Text + "', '" + TextoApellido.Text + "', '" + TextoNacimiento.Text + "','" + TextoEdad.Text + "','" + TextoCorreo.Text + "','" + TextoCarro.Text + "')", conexion);
             comando.ExecuteNonQuery();
             conexion.Close();
         }

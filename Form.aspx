@@ -19,7 +19,7 @@
                 <br />
             <asp:Button ID="VerificarEdad" runat="server" Text="Verificar edad" BackColor="#9999FF" BorderColor="White" ForeColor="White" OnClick="VerificarEdad_Click" />
                 <br />
-            <asp:Label ID="AlertaEdad" runat="server" Font-Names="Calibri Light" Visible="False">Vacio</asp:Label>
+            <asp:Label ID="AlertaEdad" runat="server" Font-Names="Calibri Light" Visible="False">AlertaEdad</asp:Label>
         </div>
             <br />
         <div id="contenido" visible="true" runat="server" >
