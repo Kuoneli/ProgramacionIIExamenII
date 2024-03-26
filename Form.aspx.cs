@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,7 +15,7 @@ namespace ProgramacionIIExamenII
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EncuestasTotales();
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -74,12 +76,43 @@ namespace ProgramacionIIExamenII
 
         protected void IngresarDatos_Click(object sender, EventArgs e)
         {
-            String s = System.Configuration.ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(s);
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(" INSERT INTO Encuestas VALUES('" + TextoNombre.Text + "', '" + TextoApellido.Text + "', '" + TextoNacimiento.Text + "','" + TextoEdad.Text + "','" + TextoCorreo.Text + "','" + TextoCarro.Text + "')", conexion);
-            comando.ExecuteNonQuery();
-            conexion.Close();
+            if (TextoNombre.Text.Equals(("")) || TextoApellido.Text.Equals(("")) || TextoCarro.Equals(("")) || TextoCorreo.Text.Equals("") || TextoNacimiento.Text.Equals(""))
+            {
+                AlertaEdad.Text = "Uno o mas campos estan vacios";
+            }
+            else
+            {
+                AlertaEdad.Text = "Puede Completar la Encuesta";
+                String s = System.Configuration.ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
+                SqlConnection conexion = new SqlConnection(s);
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(" INSERT INTO Encuestas VALUES('" + TextoNombre.Text + "', '" + TextoApellido.Text + "', '" + TextoNacimiento.Text + "','" + TextoEdad.Text + "','" + TextoCorreo.Text + "','" + TextoCarro.Text + "')", conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+           
+        }
+
+        protected void EncuestasTotales()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind(); // refrescar la tabla
+                        }
+                    }
+                }
+            }
         }
 
     

@@ -8,8 +8,10 @@
 </head>
 <body style="background-color: aliceblue">
     <form id="form1" runat="server">
-        <div hidden="hidden">
+        <div>
             <asp:Label ID="NFormulario" runat="server" Text="Numero De Formulario" Font-Names="Calibri Light"></asp:Label>
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
         </div>
           <br />
         <div id"Verificacion_Edad">
@@ -47,6 +49,9 @@
             </asp:DropDownList>
                 <br />
             <asp:Button ID="IngresarDatos" runat="server" Text="Ingresar Datos" OnClick="IngresarDatos_Click" Visible="False" />
+                <br />
+                <br />
+             <a href="Reportes.aspx">Ir a Reportes</a>
                 <br />
 
         </div>

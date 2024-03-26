@@ -14,31 +14,46 @@ namespace ProgramacionIIExamenII
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EncuestasTotales();
+            //EncuestasTotales();
             //EncuestasConCarro();
 
         }
 
-        protected void EncuestasTotales()
+        //protected void EncuestasTotales()
+        //{
+        //    string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
+        //    using (SqlConnection con = new SqlConnection(constr))
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas"))
+        //        {
+        //            using (SqlDataAdapter sda = new SqlDataAdapter())
+        //            {
+        //                cmd.Connection = con;
+        //                sda.SelectCommand = cmd;
+        //                using (DataTable dt = new DataTable())
+        //                {
+        //                    sda.Fill(dt);
+        //                    GridView1.DataSource = dt;
+        //                    GridView1.DataBind(); // refrescar la tabla
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string constr = ConfigurationManager.ConnectionStrings["ToServer"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("select COUNT (*) from Encuestas"))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
-                    {
-                        cmd.Connection = con;
-                        sda.SelectCommand = cmd;
-                        using (DataTable dt = new DataTable())
-                        {
-                            sda.Fill(dt);
-                            GridView1.DataSource = dt;
-                            GridView1.DataBind(); // refrescar la tabla
-                        }
-                    }
-                }
-            }
+
+        }
+
+        protected void TotalEncuestas_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void GridView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //protected void EncuestasConCarro()
