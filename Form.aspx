@@ -2,6 +2,10 @@
 
 <!DOCTYPE html>
 
+<%--//Query para crear la base de datos 
+    Create database Encuesta
+    create table Encuestas (nParticipante text, Apellido text, fNacimiento date, Edad int, Email text, CarroPropio varchar(3), nEncuesta int primary key identity (1,1)); --%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Formularios UH - Examen 2</title>
