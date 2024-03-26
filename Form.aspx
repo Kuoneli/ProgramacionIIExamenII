@@ -4,7 +4,9 @@
 
 <%--//Query para crear la base de datos 
     Create database Encuesta
-    create table Encuestas (nParticipante text, Apellido text, fNacimiento date, Edad int, Email text, CarroPropio varchar(3), nEncuesta int primary key identity (1,1)); --%>
+    create table Encuestas (nParticipante text, Apellido text, fNacimiento date, Edad int, Email text, CarroPropio varchar(3), nEncuesta int primary key identity (1,1)); 
+    Insert into Encuestas values ('Test', 'Test', '1995-01-14', 29, 'test@test.com', 'Si');
+--%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
